@@ -1,0 +1,57 @@
+name: pylinter
+author: programmingwithalex
+description: Lint python projects with flake8, mypy, and isort. The build will fail on violations.
+branding:
+  color: 'gray-dark'
+  icon: 'check-circle'
+
+inputs:
+  python-root:
+    description: 'directory to run linting on'
+    required: false
+    default: '.'
+  flake8-flags:
+    description: 'flake8 flags'
+    required: false
+    default: ''
+  mypy-flags:
+    description: 'mypy flags'
+    required: false
+    default: ''
+  fail-on-isort:
+    description: 'optional exit on isort errors'
+    required: false
+    default: false
+  skip-flake8:
+    description: 'skip flake8 checks'
+    required: false
+    default: false
+  skip-mypy:
+    description: 'skip mypy checks'
+    required: false
+    default: false
+  skip-isort:
+    description: 'skip isort checks'
+    required: false
+    default: false
+  mypy-ignore-dirs-files:
+    description: 'list of directories and/or files to ignore for mypy. separate with spaces'
+    required: false
+    default: ''
+  requirements-file:
+    description: 'requirements filepath for project for mypy to prevent library stub missing errors'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.python-root }}
+    - ${{ inputs.flake8-flags }}
+    - ${{ inputs.mypy-flags }}
+    - ${{ inputs.fail-on-isort }}
+    - ${{ inputs.skip-flake8 }}
+    - ${{ inputs.skip-mypy }}
+    - ${{ inputs.skip-isort }}
+    - ${{ inputs.mypy-ignore-dirs-files }}
+    - ${{ inputs.requirements-file }}
