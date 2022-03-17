@@ -1,4 +1,4 @@
-name: pylinter
+name: pylinters
 author: programmingwithalex
 description: Lint python projects with flake8, mypy, and isort. The build will fail on violations.
 branding:
