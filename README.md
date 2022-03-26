@@ -1,6 +1,6 @@
-Copyright (c) 2021, programmingwithalex
-
 # pylinter
+
+Copyright (c) 2021, [programmingwithalex](https://github.com/programmingwithalex)
 
 Enforce python linting on commits and pull requests.
 
