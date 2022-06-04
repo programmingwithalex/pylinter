@@ -76,10 +76,10 @@ jobs:
     name: CI workflow
     steps:
     - name: checkout source repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
 
     - name: linting
-      uses: programmingwithalex/pylinter@v1.4.3
+      uses: programmingwithalex/pylinter@main
 ```
 
 ### Optional flags
@@ -93,10 +93,10 @@ jobs:
     name: CI workflow
     steps:
     - name: checkout source repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
 
     - name: linting
-      uses: programmingwithalex/pylinter@v1.4.3
+      uses: programmingwithalex/pylinter@main
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
@@ -116,10 +116,10 @@ jobs:
     name: CI workflow
     steps:
     - name: checkout source repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
 
     - name: linting
-      uses: programmingwithalex/pylinter@v1.4.3
+      uses: programmingwithalex/pylinter@main
       with:
         python-root: '.'
         flake8-flags: '--count --show-source --statistics'
@@ -133,7 +133,7 @@ jobs:
         git add -A && git diff-index --cached --quiet HEAD || git commit -m 'isort'
 
     - name: push isort changes
-      uses: ad-m/github-push-action@v0.5.0
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
