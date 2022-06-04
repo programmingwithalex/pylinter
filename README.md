@@ -139,10 +139,6 @@ jobs:
         branch: ${{ github.ref }}
 ```
 
-## GITHUB_TOKEN
-
-Included by default in every workflow to give access to the repo the workflow is running in. Does **not** need to be configured manually. [Reference](https://docs.github.com/en/actions/reference/authentication-in-a-workflow)
-
 ## License
 
 [BSD 3-Clause License](https://github.com/programmingwithalex/pylinter/blob/main/LICENSE)
