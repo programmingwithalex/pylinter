@@ -48,6 +48,8 @@ Enforce python linting on commits and pull requests.
 * `mypy-ignore-dirs-files`
   * list of directories and/or files to ignore for mypy. separate with spaces
 
+  * default value is an emtpy string, meaning no directories and/or files are ignored
+
 * `requirements-file`
   * requirements filepath needed to prevent `mypy` errors `Library stubs are missing for package ...`
 
